@@ -17,7 +17,6 @@ public class CompCarrito {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_compcarrito")
     private Long idCompCarrito;
-
     @ManyToOne
     @JoinColumn(name = "id_proveedor", nullable = false)
     private Proveedor proveedor;
@@ -29,4 +28,13 @@ public class CompCarrito {
     private String nombreProducto;
     @Column(name = "cantidad", nullable = false)
     private Double cantidad;
+    @Column(name = "punitario", nullable = false)
+    private Double punitario;
+    @Column(name = "ptotal", nullable = false)
+    private Double ptotal;
+    @Column(name = "estado", nullable = false)
+    private int estado;
+    @ManyToOne
+    @JoinColumn(name = "id_usuario",  nullable = false)
+    private Usuario usuario;
 }
