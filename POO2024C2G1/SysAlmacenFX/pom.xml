@@ -168,7 +168,7 @@
 						<manifest>
 							<addClasspath>true</addClasspath>
 							<classpathPrefix>lib/</classpathPrefix>
-							<mainClass>pe.edu.upeu.sysalmacenfx.ApplicationMain</mainClass>
+							<mainClass>pe.edu.upeu.sysalmacenfx.AplicationMain</mainClass>
 						</manifest>
 					</archive>
 				</configuration>

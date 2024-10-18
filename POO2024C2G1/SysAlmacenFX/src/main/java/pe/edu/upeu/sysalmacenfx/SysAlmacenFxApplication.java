@@ -21,7 +21,8 @@ public class SysAlmacenFxApplication extends Application {
 	private Parent parent;
 
 	public static void main(String[] args) {
-		SpringApplication.run(SysAlmacenFxApplication.class, args);
+		launch(args);
+		//SpringApplication.run(SysAlmacenFxApplication.class, args);
 	}
 
 	@Override
