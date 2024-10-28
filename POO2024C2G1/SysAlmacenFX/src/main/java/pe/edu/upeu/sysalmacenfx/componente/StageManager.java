@@ -1,4 +1,4 @@
-package pe.edu.upeu.sysalmacen.componente;
+package pe.edu.upeu.sysalmacenfx.componente;
 
 import javafx.stage.Stage;
 import lombok.*;

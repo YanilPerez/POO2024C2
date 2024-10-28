@@ -14,51 +14,55 @@ public class CategoriaService {
 
     @Autowired
     CategoriaRepository repo;
-    //c
-    public Categoria save(Categoria to) {
-        return repo.save(to);
+
+    //C
+    public Categoria save(Categoria to){
+    return repo.save(to);
     }
+
     //R
     public List<Categoria> list(){
         return repo.findAll();
     }
-
     //U
-    public Categoria uptade(Categoria to, Long id) {
+    public Categoria update(Categoria to, Long id){
         try {
-            Categoria toe = repo.findById(id).get();
-            if (toe != null) {
+            Categoria toe=repo.findById(id).get();
+            if(toe!=null){
                 toe.setNombre(to.getNombre());
             }
             return repo.save(toe);
-        } catch (Exception e) {
-            System.out.println("Error: " + e.getMessage());
+        }catch (Exception e){
+            System.out.println("Error: "+ e.getMessage());
         }
         return null;
     }
-    public Categoria uptade(Categoria to){
+
+    public Categoria update(Categoria to){
         return repo.save(to);
     }
 
     //D
-    public void delete(Long id) {
+    public void delete(Long id){
         repo.deleteById(id);
     }
-
-    public Categoria buscar(Long id) {
+    //B
+    public Categoria searchById(Long id){
         return repo.findById(id).orElse(null);
     }
 
-    public List<ComboBoxOption> listarCombobox(){
-        List<ComboBoxOption> listar =new ArrayList<>();
 
-        for (Categoria cate : repo.findAll()) {
-            listar.add(new ComboBoxOption(
-                    String.valueOf(cate.getIdCategoria()),
-                    cate.getNombre()));
+    public List<ComboBoxOption> listarCombobox(){
+        List<ComboBoxOption> listar=new ArrayList<>();
+        ComboBoxOption cb;
+        for(Categoria cate : repo.findAll()) {
+            cb=new ComboBoxOption();
+            cb.setKey(String.valueOf(cate.getIdCategoria()));
+            cb.setValue(cate.getNombre());
+            listar.add(cb);
         }
         return listar;
-
     }
-}
 
+
+}
